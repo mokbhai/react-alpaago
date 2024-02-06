@@ -47,8 +47,13 @@ function Signup() {
     }
 
     // Add the new user if email doesn't exist
-    await addDoc(collectionRef, newUser);
-    localStorage.setItem("user", JSON.stringify(newUser));
+    const newUserRef = await addDoc(collectionRef, newUser);
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify({ ...newUser, id: newUserRef.id })
+    );
+
     navigate("/");
     window.location.reload();
   };

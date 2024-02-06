@@ -34,8 +34,7 @@ function Login() {
         if (user.password === credentials.password) {
           isAuthenticated = true;
           localStorage.setItem("user", JSON.stringify({ ...user, id: doc.id }));
-          // console.log("User ID:", doc.id); // Print user ID to console
-          // Redirect to profile tab after successful login
+
           navigate("/");
           window.location.reload();
         }

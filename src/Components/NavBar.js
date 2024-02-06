@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [userProfile, setUserProfile] = useState(null);
@@ -16,13 +15,11 @@ export default function Navbar() {
       }
     }
   }, [storedUser]);
-  const navigate = useNavigate();
 
   const handleLogout = () => {
     localStorage.removeItem("user");
     setUserProfile(null);
-    navigate("/login");
-    // window.location.reload();
+    window.location.reload();
   };
 
   return (

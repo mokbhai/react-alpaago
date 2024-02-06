@@ -13,6 +13,8 @@ function Signup() {
     password: "",
     number: "",
     isActive: "true",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   });
 
   const handleInputChange = (event) => {

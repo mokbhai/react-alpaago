@@ -1,7 +1,6 @@
-// Import necessary dependencies
 import React, { useState, useEffect } from "react";
-import UserForm from "./userForm";
-import "./Styles/userApp.css";
+import UserForm from "./UserForm";
+import "./Styles/UserApp.css";
 import db from "../Configs/FirebaseConfig";
 import {
   onSnapshot,
@@ -10,6 +9,7 @@ import {
   doc,
   updateDoc,
   deleteDoc,
+  serverTimestamp,
 } from "firebase/firestore";
 
 const UserApp = () => {
@@ -25,14 +25,15 @@ const UserApp = () => {
         snapshot.docs.map((doc) => ({
           ...doc.data(),
           id: doc.id,
+          createdAt: doc.data().createdAt?.toDate(),
+          updatedAt: doc.data().updatedAt?.toDate(),
         }))
       );
-      setLoading(false); // Set loading to false when data is fetched
+      setLoading(false);
     });
 
     return () => unsubscribe();
   }, []);
-  // Assuming loading is a boolean state indicating whether data is loading
 
   if (loading) {
     return (
@@ -77,14 +78,21 @@ const UserApp = () => {
   };
 
   const handleNewUser = async (newUser) => {
+    const newUserWithTimestamps = {
+      ...newUser,
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    };
+
     const collectionRef = collection(db, "users");
-    await addDoc(collectionRef, newUser);
+    await addDoc(collectionRef, newUserWithTimestamps);
   };
 
   const handleUserStatusChange = async (userId, isActive) => {
     const userRef = doc(db, "users", userId);
     await updateDoc(userRef, {
       isActive: isActive,
+      updatedAt: serverTimestamp(),
     });
   };
 
@@ -127,6 +135,12 @@ const UserApp = () => {
             <th onClick={() => handleSort("number")}>
               Number {sortIndicator("number")}
             </th>
+            <th onClick={() => handleSort("createdAt")}>
+              createdAt {sortIndicator("createdAt")}
+            </th>
+            <th onClick={() => handleSort("updatedAt")}>
+              updatedAt {sortIndicator("updatedAt")}
+            </th>
             <th>Password Strength</th>
             <th>Action</th>
           </tr>
@@ -149,6 +163,8 @@ const UserApp = () => {
                 </select>
               </td>
               <td>{user.number}</td>
+              <td>{user.createdAt ? user.createdAt.toString() : ""}</td>
+              <td>{user.updatedAt ? user.updatedAt.toString() : ""}</td>
               <td>{getPasswordStrength(user.password)}</td>
               <td>
                 <button

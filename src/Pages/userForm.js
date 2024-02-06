@@ -7,6 +7,8 @@ function UserForm({ onAddUser }) {
     number: "",
     password: "",
     name: "",
+    createdAt: new Date(),
+    updatedAt: new Date(),
   });
 
   const [formErrors, setFormErrors] = useState(null);
@@ -30,6 +32,8 @@ function UserForm({ onAddUser }) {
       number: "",
       password: "",
       name: "",
+      createdAt: new Date(),
+      updatedAt: new Date(),
     });
   };
 
@@ -38,6 +42,7 @@ function UserForm({ onAddUser }) {
     setNewUser({
       ...newUser,
       [name]: value,
+      updatedAt: new Date(), // Update updatedAt whenever there's an input change
     });
   };
 
@@ -46,12 +51,12 @@ function UserForm({ onAddUser }) {
 
     // Email validation
     if (!user.email || !user.email.includes("@")) {
-      setFormErrors("Please enter a valid email address.");
+      errors.email = "Please enter a valid email address.";
     }
 
     // Name validation
     if (!user.name) {
-      setFormErrors("Please enter your name.");
+      errors.name = "Please enter your name.";
     }
 
     return errors;
@@ -60,7 +65,13 @@ function UserForm({ onAddUser }) {
   return (
     <div>
       <h2>Add New User</h2>
-      {formErrors && <p style={{ color: "red" }}>{formErrors}</p>}
+      {formErrors && (
+        <div style={{ color: "red" }}>
+          {Object.values(formErrors).map((error, index) => (
+            <p key={index}>{error}</p>
+          ))}
+        </div>
+      )}
 
       <form onSubmit={handleSubmit} className="user-form">
         <label>Name:</label>

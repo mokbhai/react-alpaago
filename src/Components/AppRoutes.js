@@ -2,7 +2,7 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import WeatherApp from "../Pages/WeatherApp";
-import UsersApp from "../Pages/userApp";
+import UsersApp from "../Pages/UserApp";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
 import UserProfile from "../Pages/UserProfile";
@@ -29,6 +29,10 @@ function AppRoutes({ isLoggedIn }) {
       <Route
         path="/profile"
         element={isLoggedIn ? <UserProfile /> : <Navigate to="/login" />}
+      />
+      <Route
+        path="/*"
+        element={isLoggedIn ? <WeatherApp /> : <Navigate to="/login" />}
       />
     </Routes>
   );

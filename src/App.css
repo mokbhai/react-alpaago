@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+.navbar {
+  background-color: grey;
+  color: white;
+  padding: 20px; /* Add padding for spacing */
+}
+
+.navbar ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin-right: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  line-height: flex; /* Adjust line height for vertical centering */
+}

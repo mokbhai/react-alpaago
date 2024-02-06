@@ -5,6 +5,7 @@ import db from "../Configs/FirebaseConfig";
 
 function Login() {
   const navigate = useNavigate();
+  const [Error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const [credentials, setCredentials] = useState({
     email: "",
@@ -32,7 +33,6 @@ function Login() {
         const user = doc.data();
         if (user.password === credentials.password) {
           isAuthenticated = true;
-          alert("Login successful!");
           localStorage.setItem("user", JSON.stringify(user));
           // Redirect to profile tab after successful login
           navigate("/");
@@ -41,10 +41,10 @@ function Login() {
       });
 
       if (!isAuthenticated) {
-        alert("Invalid email or password. Please try again.");
+        setError("Invalid email or password. Please try again.");
       }
     } catch (error) {
-      alert("Failed to login. Please check your email and password.");
+      setError("Failed to login. Please check your email and password.");
       console.error("Error logging in:", error.message);
     } finally {
       setLoading(false);
@@ -62,6 +62,7 @@ function Login() {
   return (
     <div>
       <h2>Login</h2>
+      {Error && <h2 className="error">{Error}</h2>}
       <form onSubmit={handleLogin}>
         <label>Email:</label>
         <input

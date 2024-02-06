@@ -6,6 +6,7 @@ import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 function Signup() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [Error, setError] = useState(false);
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",
@@ -38,14 +39,13 @@ function Signup() {
     const querySnapshot = await getDocs(q);
 
     if (!querySnapshot.empty) {
-      alert("User already exists with that email.");
+      setError("User already exists with that email.");
       setLoading(false);
       return; // Exit the function early if user already exists
     }
 
     // Add the new user if email doesn't exist
     await addDoc(collectionRef, newUser);
-    alert("User added successfully!");
     localStorage.setItem("user", JSON.stringify(newUser));
     navigate("/");
     window.location.reload();
@@ -54,6 +54,7 @@ function Signup() {
   return (
     <div>
       <h2>Signup</h2>
+      {Error && <h2 className="error">{Error}</h2>}
       <form
         onSubmit={(e) => {
           e.preventDefault();

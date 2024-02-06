@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/react-alpaago/static/css/main.728cebfb.css",
-    "main.js": "/react-alpaago/static/js/main.b7e42b90.js",
+    "main.js": "/react-alpaago/static/js/main.c21ca519.js",
     "index.html": "/react-alpaago/index.html",
     "main.728cebfb.css.map": "/react-alpaago/static/css/main.728cebfb.css.map",
-    "main.b7e42b90.js.map": "/react-alpaago/static/js/main.b7e42b90.js.map"
+    "main.c21ca519.js.map": "/react-alpaago/static/js/main.c21ca519.js.map"
   },
   "entrypoints": [
     "static/css/main.728cebfb.css",
-    "static/js/main.b7e42b90.js"
+    "static/js/main.c21ca519.js"
   ]
 }

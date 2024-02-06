@@ -1,8 +1,8 @@
 // Import necessary dependencies
 import React, { useState, useEffect } from "react";
 import UserForm from "./userForm";
-import "./userApp.css";
-import db from "./FirebaseConfig";
+import "./Styles/userApp.css";
+import db from "../Configs/FirebaseConfig";
 import {
   onSnapshot,
   collection,

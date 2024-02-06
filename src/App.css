@@ -16,17 +16,18 @@
 .App-link {
   color: #61dafb;
 }
+
 .navbar {
   background-color: grey;
   color: white;
-  padding: 20px; /* Add padding for spacing */
+  padding: 20px;
 }
 
 .navbar ul {
   list-style-type: none;
   display: flex;
-  justify-content: center; /* Center the items horizontally */
-  margin: 0;
+  justify-content: center;
+  margin: 0 auto;
   padding: 0;
 }
 
@@ -37,5 +38,14 @@
 .navbar a {
   color: white;
   text-decoration: none;
-  line-height: flex; /* Adjust line height for vertical centering */
+}
+
+.navbar button {
+  color: white;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 5px;
+  text-decoration: none;
 }

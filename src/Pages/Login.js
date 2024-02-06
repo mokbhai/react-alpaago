@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import db from "./FirebaseConfig";
+import db from "../Configs/FirebaseConfig";
 
 function Login() {
   const navigate = useNavigate();
@@ -35,7 +35,7 @@ function Login() {
           alert("Login successful!");
           localStorage.setItem("user", JSON.stringify(user));
           // Redirect to profile tab after successful login
-          navigate("/profile");
+          navigate("/");
           window.location.reload();
         }
       });

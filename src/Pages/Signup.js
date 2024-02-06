@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import db from "./FirebaseConfig";
+import db from "../Configs/FirebaseConfig";
 import { useNavigate } from "react-router-dom";
 import { collection, addDoc, query, where, getDocs } from "firebase/firestore";
 
@@ -47,7 +47,7 @@ function Signup() {
     await addDoc(collectionRef, newUser);
     alert("User added successfully!");
     localStorage.setItem("user", JSON.stringify(newUser));
-    navigate("/profile");
+    navigate("/");
     window.location.reload();
   };
 

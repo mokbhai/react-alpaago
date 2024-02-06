@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/mokbhai.github.io/react-alpaago/static/css/main.728cebfb.css",
-    "main.js": "/mokbhai.github.io/react-alpaago/static/js/main.c9150cfb.js",
-    "index.html": "/mokbhai.github.io/react-alpaago/index.html",
-    "main.728cebfb.css.map": "/mokbhai.github.io/react-alpaago/static/css/main.728cebfb.css.map",
-    "main.c9150cfb.js.map": "/mokbhai.github.io/react-alpaago/static/js/main.c9150cfb.js.map"
+    "main.css": "/static/css/main.728cebfb.css",
+    "main.js": "/static/js/main.b51227ef.js",
+    "index.html": "/index.html",
+    "main.728cebfb.css.map": "/static/css/main.728cebfb.css.map",
+    "main.b51227ef.js.map": "/static/js/main.b51227ef.js.map"
   },
   "entrypoints": [
     "static/css/main.728cebfb.css",
-    "static/js/main.c9150cfb.js"
+    "static/js/main.b51227ef.js"
   ]
 }

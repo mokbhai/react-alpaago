@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import UserForm from "./UserForm";
+import UserForm from "./UserForm.js";
 import "./Styles/UserApp.css";
-import db from "../Configs/FirebaseConfig";
+import db from "../Configs/FirebaseConfig.js";
 import {
   onSnapshot,
   collection,

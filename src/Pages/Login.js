@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import db from "../Configs/FirebaseConfig";
+import db from "../Configs/FirebaseConfig.js";
 
 function Login() {
   const navigate = useNavigate();

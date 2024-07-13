@@ -1,6 +1,6 @@
 // UserProfile.js
 import React, { useEffect, useState } from "react";
-import db from "../Configs/FirebaseConfig";
+import db from "../Configs/FirebaseConfig.js";
 import { getDoc, doc } from "firebase/firestore";
 
 function UserProfile() {

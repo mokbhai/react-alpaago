@@ -2,10 +2,11 @@
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
 import WeatherApp from "../Pages/WeatherApp.js";
-import UsersApp from "../Pages/UserApp.js";
 import Login from "../Pages/Login.js";
 import Signup from "../Pages/Signup.js";
 import UserProfile from "../Pages/UserProfile.js";
+import NewsPage from "../Pages/NewsApp.js";
+import UserApp from "../Pages/UserApp.js";
 
 function AppRoutes({ isLoggedIn }) {
   return (
@@ -15,8 +16,12 @@ function AppRoutes({ isLoggedIn }) {
         element={isLoggedIn ? <WeatherApp /> : <Navigate to="/login" />}
       />
       <Route
+        path="/news"
+        element={isLoggedIn ? <NewsPage /> : <Navigate to="/login" />}
+      />
+      <Route
         path="/users"
-        element={isLoggedIn ? <UsersApp /> : <Navigate to="/login" />}
+        element={isLoggedIn ? <UserApp /> : <Navigate to="/login" />}
       />
       <Route
         path="/login"

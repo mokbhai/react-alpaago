@@ -31,6 +31,11 @@ export default function Navbar() {
           </Link>
         </li>
         <li>
+          <Link to="/news" className="nav-link">
+            News
+          </Link>
+        </li>
+        <li>
           <Link to="/users" className="nav-link">
             Users
           </Link>

@@ -6,16 +6,16 @@ import Navbar from "./Components/NavBar";
 import "./App.css";
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const storedUser = localStorage.getItem("user");
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // const storedUser = localStorage.getItem("user");
 
-  useEffect(() => {
-    if (storedUser) {
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-    }
-  }, [storedUser]);
+  // useEffect(() => {
+  //   if (storedUser) {
+  //     setIsLoggedIn(true);
+  //   } else {
+  //     setIsLoggedIn(false);
+  //   }
+  // }, [storedUser]);
 
   return (
     <Router basename="/react-alpaago">

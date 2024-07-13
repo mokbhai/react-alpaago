@@ -1,7 +1,7 @@
 // App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AppRoutes from "./Components/AppRoutes.js";
+import AppRoutes from "./AppRoutes.js";
 import Navbar from "./Components/NavBar.js";
 import "./App.css";
 

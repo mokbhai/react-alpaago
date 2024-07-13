@@ -1,12 +1,12 @@
 // routes.js
 import React from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import WeatherApp from "../Pages/WeatherApp.js";
-import Login from "../Pages/Login.js";
-import Signup from "../Pages/Signup.js";
-import UserProfile from "../Pages/UserProfile.js";
-import NewsPage from "../Pages/NewsApp.js";
-import UserApp from "../Pages/UserApp.js";
+import WeatherApp from "./Pages/WeatherApp.js";
+import Login from "./Pages/Login.js";
+import Signup from "./Pages/Signup.js";
+import UserProfile from "./Pages/UserProfile.js";
+import NewsPage from "./Pages/NewsApp.js";
+import UserApp from "./Pages/UserApp.js";
 
 function AppRoutes({ isLoggedIn }) {
   return (

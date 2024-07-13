@@ -97,14 +97,24 @@ const WeatherApp = () => {
           value={position.latitude}
           type="number"
           required
-          onChange={(e) => setPosition({ latitude: e.target.value })}
+          onChange={(e) =>
+            setPosition({
+              latitude: e.target.value,
+              longitude: position.longitude,
+            })
+          }
         />
         <label>Longitude:</label>
         <input
           value={position.longitude}
           type="number"
           required
-          onChange={(e) => setPosition({ longitude: e.target.value })}
+          onChange={(e) =>
+            setPosition({
+              latitude: position.latitude,
+              longitude: e.target.value,
+            })
+          }
         />
         <button type="submit" onClick={handleFetchWeather}>
           Fetch Weather
